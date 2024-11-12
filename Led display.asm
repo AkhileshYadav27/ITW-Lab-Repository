@@ -1,0 +1,10 @@
+	   CALL 0F4D
+	   MVI B,13
+	   LXI H,3030
+	   CALL 1747
+	   MVI A,30
+	   OUT 38
+	   CALL 0F31
+	   MVI B,13
+	   CALL 1747
+	   HLT

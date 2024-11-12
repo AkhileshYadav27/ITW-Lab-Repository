@@ -1,0 +1,19 @@
+	   LXI H,3000
+	   MOV E,M
+	   MOV B,M
+	   MVI D,00
+	   LXI H,0000
+	   DCR B
+
+LOOP2:	   MOV A,B
+	   CPI 00
+	   JZ RESULT
+
+LOOP1:	   DAD D
+	   DCR A
+	   JNZ LOOP1
+	   DCR B
+	   JNZ LOOP2
+
+RESULT:	   SHLD 3002
+	   HLT

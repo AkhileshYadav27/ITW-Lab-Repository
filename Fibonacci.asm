@@ -1,0 +1,24 @@
+	   LXI SP,FFFF
+	   LXI B,0004
+	   LXI H,0000
+	   MOV A,C
+	   CPI 00
+	   JZ RESULT
+
+LOOP1:	   PUSH B
+	   DCR C
+	   JNZ LOOP1
+	   LXI B,0001
+	   PUSH B
+	   PUSH H
+
+LOOP2:	   POP H
+	   POP B
+	   DAD B
+	   SPHL
+	   PUSH B
+	   DCR A
+	   JNZ LOOP2
+
+RESULT:	   SHLD 3002
+	   HLT
